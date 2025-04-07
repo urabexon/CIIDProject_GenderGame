@@ -111,7 +111,26 @@ void setup() {
 }
 
 void draw() {
+    lazyscreen.beginDraw();
+    switch(gameState) {
+        case 1:
+            lazyscreen.image(introImage,0,0);
+            break;
+        case 2:
+            lazyscreen.background(0);
+            seconds = (millis() - startingTime) / 1000;//millis is computer time.
+            minutes = seconds / 60;
+            hours = minutes/60;
+            seconds-=minutes * 60;
+            minutes-=hours * 60;
 
+            // switch which image shows
+            switch (myImageNumber) {
+
+            }
+        case 3:
+             lazyscreen.image(img27,0,0);
+    }
 }
 
 void keyPressed() {
