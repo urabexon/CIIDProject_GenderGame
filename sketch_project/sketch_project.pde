@@ -1,67 +1,37 @@
 // Sound
 import processing.sound.*;
-SoundFile sound1;
-SoundFile sound2;
-SoundFile sound3;
-SoundFile sound4;
-SoundFile sound5;
+SoundFile[] sounds = new SoundFile[5];
+String[] soundTriggers = { "6.wav", "9.wav", "13.wav", "15.wav", "20.wav" };
+int[] soundImageIndexes = { 5, 9, 13, 15, 20 };
 
 // Images
-PImage introImage;
-PImage img1; 
-PImage img2;
-PImage img3;
-PImage img4;
-PImage img5; 
-PImage img6;
-PImage img7;
-PImage img8;
-PImage img9; 
-PImage img10;
-PImage img11;
-PImage img12;
-PImage img13; 
-PImage img14;
-PImage img15;
-PImage img16;
-PImage img17;
-PImage img18;
-PImage img19;
-PImage img20; 
-PImage img21;
-PImage img22;
-PImage img23;
-PImage img24; 
-PImage img25;
-PImage img26;
-PImage img27;
+PImage[] images = new PImage[28];
 
+// Graphics
 PGraphics lazyscreen;
-int myImageNumber = 1; 
-int nrOfImages = 25;
+int currentImageIndex = 1;
+int totalImages = 25;
 
-// count up timer
+// Timer
 int startingTime;
-int seconds;
-int minutes;
-int hours;
+int seconds, minutes, hours;
+int finalSeconds, finalMinutes;
 
-// keep time for result
-int finalSeconds;
-int finalMinutes;
-
-// game variables
+// Game state
 int gameState = 1;
+boolean gameStarted = false;
 int keyman = 0;
 int keywoman = 0;
 
+// Font
 PFont font;
-
-boolean gameStarted = false;;
 
 void setup() {  
     fullScreen();
-    lazyscreen= createGraphics(960,540);
+    lazyscreen = createGraphics(960, 540);
+    font = createFont("Arial", 32, true);
+
+    // fix now 
 
     // images
     introImage = loadImage("0.jpeg");
