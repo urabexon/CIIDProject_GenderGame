@@ -116,7 +116,15 @@ void updateTimer() {
 }
 
 void handleSound(int index) {
-    
+    for (int i = 0; i < soundImageIndexes.length; i++) {
+        if (index == soundImageIndexes[i]) {
+            if (!sounds[i].isPlaying())
+                sounds[i].play();
+        } else {
+            if (sounds[i].isPlaying())
+                sounds[i].stop();
+        }
+    }
 }
 
 int getDisplayImageIndex(int index) {
