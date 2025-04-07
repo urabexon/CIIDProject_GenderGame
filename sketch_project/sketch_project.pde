@@ -108,11 +108,15 @@ void keyPressed() {
 }
 
 void updateTimer() {
-
+    seconds = (millis() - startingTime) / 1000;
+    minutes = seconds / 60;
+    hours = minutes / 60;
+    seconds -= minutes * 60;
+    minutes -= hours * 60;
 }
 
 void handleSound(int index) {
-
+    
 }
 
 int getDisplayImageIndex(int index) {
