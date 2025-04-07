@@ -84,36 +84,27 @@ void draw() {
 }
 
 void keyPressed() {
-    println("key pressed (" + myImageNumber+","+gameState+")");
-    if (gameState == 1) {
-        if (keyCode == ENTER) {
-            gameState = 2;
-        }
-    } else if (gameState == 2 && myImageNumber < nrOfImages) {
+    println("Key pressed (" + currentImageIndex + "," + gameState + ")");
+    if (gameState == 1 && keyCode == ENTER) {
+        gameState = 2;
+    } else if (gameState == 2 && currentImageIndex < totalImages) {
         if (!gameStarted) {
             gameStarted = true;
             startingTime = millis();
         }
-        if (keyCode == 39) {
-            // right
-            myImageNumber++;
-            keyman = keyman +1; 
-        } else if(keyCode == 37) {
-            // left
-            myImageNumber++; 
-            keywoman = keywoman +1;
+        if (keyCode == RIGHT) {
+            keyman++;
+            currentImageIndex++;
+        } else if (keyCode == LEFT) {
+            keywoman++;
+            currentImageIndex++;
         }
-        println("entering here" + myImageNumber);
-    } else if (gameState == 2 && myImageNumber >= nrOfImages-1) {
+    } else if (gameState == 2 && currentImageIndex >= totalImages) {
         gameState = 3;
-        background(255);
         finalSeconds = seconds;
         finalMinutes = minutes;
-        lazyscreen.textFont(font);
-        lazyscreen.textAlign(CENTER);
-        lazyscreen.fill(0);
-        lazyscreen.text("Time:" + (minutes) + " min:" + (seconds) + " sec",480,30);
-        lazyscreen.text("man count:" + keyman,10,30);
-        lazyscreen.text("woman count:" + keywoman,10,60);
+        background(255);
     }
 }
+
+
