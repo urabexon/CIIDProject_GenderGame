@@ -124,7 +124,7 @@ void draw() {
             seconds-=minutes * 60;
             minutes-=hours * 60;
 
-            // switch which image shows
+            // ------- main image switching -------
             switch (myImageNumber) {
                 case 1:
                     introImage=img1; 
@@ -281,17 +281,19 @@ void draw() {
                     lazyscreen.image(introImage,0,0);
                     break;
 
-                case 26:
-                    introImage=img26;
-                    lazyscreen.image(introImage,0,0);
-                    break;
+                // case 26:
+                // introImage=img26;
+                // lazyscreen.image(introImage,0,0);
+                // break;
 
-                case 27:
-                    introImage=img27;
-                    lazyscreen.image(introImage,0,0);
-                    lazyscreen.text("thank you for playing",50,50);
-                    break;
+                // case 27:
+                // introImage=img27;
+                // lazyscreen.image(introImage,0,0);
+                // lazyscreen.text("thank you for playing",50,50);
+                // break;
             }
+            // ------- end image switching -------
+
             // draw to screen
             lazyscreen.textFont(font);
             lazyscreen.textAlign(CENTER);
@@ -304,8 +306,17 @@ void draw() {
             break;
 
         case 3:
-             lazyscreen.image(img27,0,0);
+            lazyscreen.image(img27,0,0);
+            lazyscreen.textFont(font);
+            lazyscreen.textAlign(CENTER);
+            lazyscreen.fill(0);
+            lazyscreen.text("Time: "+ (minutes) + " min:" + (seconds) + " sec",480,30);
+            lazyscreen.text("Male: " + keyman,480,80);
+            lazyscreen.text("Female: " + keywoman,480,120);
+            break;
     }
+    lazyscreen.endDraw();
+    image(lazyscreen,0,0,width,height);
 }
 
 void keyPressed() {
