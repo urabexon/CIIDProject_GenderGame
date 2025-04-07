@@ -107,4 +107,14 @@ void keyPressed() {
     }
 }
 
+void updateTimer() {
 
+}
+
+void handleSound(int index) {
+
+}
+
+int getDisplayImageIndex(int index) {
+
+}
