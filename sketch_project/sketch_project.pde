@@ -26,6 +26,7 @@ int keywoman = 0;
 // Font
 PFont font;
 
+// Setup function(initializes screen, loads images, sounds, font)
 void setup() {  
     fullScreen();
     lazyscreen = createGraphics(960, 540);
@@ -42,6 +43,7 @@ void setup() {
     }
 }
 
+// Draw function(updates and renders screen based on current game state)
 void draw() {
     lazyscreen.beginDraw();
     switch(gameState) {
@@ -83,6 +85,7 @@ void draw() {
     image(lazyscreen, 0, 0, width, height);
 }
 
+// Handles key input to transition game state and record user choices
 void keyPressed() {
     println("Key pressed (" + currentImageIndex + "," + gameState + ")");
     if (gameState == 1 && keyCode == ENTER) {
@@ -100,6 +103,7 @@ void keyPressed() {
             currentImageIndex++;
         }
     } else if (gameState == 2 && currentImageIndex >= totalImages) {
+        // Transition to result screen
         gameState = 3;
         finalSeconds = seconds;
         finalMinutes = minutes;
@@ -107,6 +111,7 @@ void keyPressed() {
     }
 }
 
+// Calculates and updates elapsed time since game start
 void updateTimer() {
     seconds = (millis() - startingTime) / 1000;
     minutes = seconds / 60;
@@ -115,6 +120,7 @@ void updateTimer() {
     minutes -= hours * 60;
 }
 
+// Plays or stops sounds depending on the current image index
 void handleSound(int index) {
     for (int i = 0; i < soundImageIndexes.length; i++) {
         if (index == soundImageIndexes[i]) {
@@ -127,6 +133,7 @@ void handleSound(int index) {
     }
 }
 
+// Returns image index to display
 int getDisplayImageIndex(int index) {
     // If the index is in the sound trigger list, use img5 instead
     for (int trigger : soundImageIndexes) {
