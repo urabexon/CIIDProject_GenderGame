@@ -113,3 +113,30 @@ void setup() {
 void draw() {
 
 }
+
+void keyPressed() {
+    println("key pressed (" + myImageNumber+","+gameState+")");
+    if (gameState == 1) {
+        if (keyCode == ENTER) {
+            gameState = 2;
+        }
+    } else if (gameState == 2 && myImageNumber < nrOfImages) {
+        if (!gameStarted) {
+            gameStarted = true;
+            startingTime = millis();
+        }
+        if (keyCode == 39) {
+            // right
+            myImageNumber++;
+            keyman = keyman +1; 
+        } else if(keyCode == 37) {
+            // left
+            myImageNumber++; 
+            keywoman = keywoman +1;
+        }
+        println("entering here" + myImageNumber);
+    } else if (gameState == 2 && myImageNumber >= nrOfImages-1) {
+        // add line
+    }
+
+}
