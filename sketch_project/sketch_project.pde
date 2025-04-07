@@ -40,74 +40,67 @@ PGraphics lazyscreen;
 int myImageNumber = 1; 
 int nrOfImages = 25;
 
-// Count up timer
+// count up timer
 int startingTime;
 int seconds;
 int minutes;
 int hours;
+
 // keep time for result
 int finalSeconds;
 int finalMinutes;
 
-// Game variables
+// game variables
 int gameState = 1;
 int keyman = 0;
 int keywoman = 0;
-// int timeOut = 10;
-// int counter = 20;
+
 PFont font;
 
 boolean gameStarted = false;;
 
-void setup() {
-  // size(960,540);
-  
-  fullScreen();
-  // scale(3);
-  lazyscreen= createGraphics(960,540);
-  
-  // Images
-  introImage = loadImage("0.jpeg");
-  // resize(introImage.width*2, introImage.height*2);
-  img1 = loadImage("1.jpeg"); 
-  img2 = loadImage("2.jpeg");
-  img3 = loadImage("3.jpeg");
-  img4 = loadImage("4.jpeg"); 
-  img5 = loadImage("5.jpeg");
-  img6 = loadImage("6.jpeg");
-  img7 = loadImage("7.jpeg"); 
-  img8 = loadImage("8.jpeg");
-  img9 = loadImage("9.jpeg");
-  img10 = loadImage("10.jpeg"); 
-  img11 = loadImage("11.jpeg");
-  img12 = loadImage("12.jpeg");
-  img13 = loadImage("13.jpeg"); 
-  img14 = loadImage("14.jpeg");
-  img15 = loadImage("15.jpeg");
-  img16 = loadImage("16.jpeg"); 
-  img17 = loadImage("17.jpeg");
-  img18 = loadImage("18.jpeg");
-  img19 = loadImage("19.jpeg"); 
-  img20 = loadImage("20.jpeg");
-  img21 = loadImage("21.jpeg");
-  img22 = loadImage("22.jpeg"); 
-  img23 = loadImage("23.jpeg");
-  img24 = loadImage("24.jpeg");
-  img25 = loadImage("25.jpeg");
-  img26 = loadImage("26.jpeg");
-  img27 = loadImage("27.jpeg");
+void setup() {  
+    fullScreen();
+    lazyscreen= createGraphics(960,540);
 
-  // sound
-  sound1 = new SoundFile(this,"6.wav");
-  sound2 = new SoundFile(this,"9.wav");
-  sound3 = new SoundFile(this,"13.wav");
-  sound4 = new SoundFile(this,"15.wav");
-  sound5 = new SoundFile(this,"20.wav");
-  
-  font = createFont("Arial", 32, true);
-  // count up timer
-  // textSize(20);//Count down test size
+    // images
+    introImage = loadImage("0.jpeg");
+    img1 = loadImage("1.jpeg"); 
+    img2 = loadImage("2.jpeg");
+    img3 = loadImage("3.jpeg");
+    img4 = loadImage("4.jpeg"); 
+    img5 = loadImage("5.jpeg");
+    img6 = loadImage("6.jpeg");
+    img7 = loadImage("7.jpeg"); 
+    img8 = loadImage("8.jpeg");
+    img9 = loadImage("9.jpeg");
+    img10 = loadImage("10.jpeg"); 
+    img11 = loadImage("11.jpeg");
+    img12 = loadImage("12.jpeg");
+    img13 = loadImage("13.jpeg"); 
+    img14 = loadImage("14.jpeg");
+    img15 = loadImage("15.jpeg");
+    img16 = loadImage("16.jpeg"); 
+    img17 = loadImage("17.jpeg");
+    img18 = loadImage("18.jpeg");
+    img19 = loadImage("19.jpeg"); 
+    img20 = loadImage("20.jpeg");
+    img21 = loadImage("21.jpeg");
+    img22 = loadImage("22.jpeg"); 
+    img23 = loadImage("23.jpeg");
+    img24 = loadImage("24.jpeg");
+    img25 = loadImage("25.jpeg");
+    img26 = loadImage("26.jpeg");
+    img27 = loadImage("27.jpeg");
 
+    // sound
+    sound1 = new SoundFile(this,"6.wav");
+    sound2 = new SoundFile(this,"9.wav");
+    sound3 = new SoundFile(this,"13.wav");
+    sound4 = new SoundFile(this,"15.wav");
+    sound5 = new SoundFile(this,"20.wav");
+  
+    font = createFont("Arial", 32, true);
 }
 
 void draw() {
@@ -280,17 +273,6 @@ void draw() {
                     introImage=img25;
                     lazyscreen.image(introImage,0,0);
                     break;
-
-                // case 26:
-                // introImage=img26;
-                // lazyscreen.image(introImage,0,0);
-                // break;
-
-                // case 27:
-                // introImage=img27;
-                // lazyscreen.image(introImage,0,0);
-                // lazyscreen.text("thank you for playing",50,50);
-                // break;
             }
             // ------- end image switching -------
 
