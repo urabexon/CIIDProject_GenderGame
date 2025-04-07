@@ -128,5 +128,10 @@ void handleSound(int index) {
 }
 
 int getDisplayImageIndex(int index) {
-
+    // If the index is in the sound trigger list, use img5 instead
+    for (int trigger : soundImageIndexes) {
+        if (index == trigger)
+            return 5;
+    }
+    return index;
 }
