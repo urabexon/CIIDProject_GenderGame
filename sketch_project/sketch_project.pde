@@ -126,8 +126,183 @@ void draw() {
 
             // switch which image shows
             switch (myImageNumber) {
+                case 1:
+                    introImage=img1; 
+                    lazyscreen.image(introImage,0,0);
+                    break;
 
+                case 2:
+                    introImage=img2;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 3:
+                    introImage=img3;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 4:
+                    introImage=img4;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 5:
+                    if (!sound1.isPlaying()) {
+                        sound1.play();
+                    }
+                    introImage=img5;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 6:
+                    if (sound1.isPlaying()) {
+                        sound1.stop();
+                    }
+                    introImage=img6;
+                    lazyscreen.image(introImage,0,0); 
+                    break;
+
+                case 7:
+                    introImage=img7;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 8:
+                    introImage=img8;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 9:
+                    if (!sound2.isPlaying()) {
+                        sound2.play();
+                    }
+                    introImage=img5;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 10:
+                    if (sound2.isPlaying()) {
+                        sound2.stop();
+                    }
+                    introImage=img10;
+                    lazyscreen.image(introImage,0,0); 
+                    break;
+
+                case 11:
+                    introImage=img11;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 12:
+                    introImage=img12;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 13:
+                    if (!sound3.isPlaying()) {
+                        sound3.play();
+                    }
+                    introImage=img5;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 14:
+                    if (sound3.isPlaying()) {
+                        sound3.stop();
+                    }
+                    introImage=img14;
+                    lazyscreen.image(introImage,0,0); 
+                    break;
+
+                case 15:
+                    if (!sound4.isPlaying()) {
+                        sound4.play();
+                    }
+                    introImage=img5;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 16:
+                    if (sound4.isPlaying()) {
+                        sound4.stop();
+                    }
+                    introImage=img16;
+                    lazyscreen.image(introImage,0,0); 
+                    break;
+
+                case 17:
+                    introImage=img17;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 18:
+                    introImage=img18;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 19:
+                    introImage=img19;
+                    lazyscreen.image(introImage,0,0);
+                    break; 
+
+                case 20:
+                    if (!sound5.isPlaying()) {
+                        sound5.play();
+                    }
+                    introImage=img5;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 21:
+                    if (sound5.isPlaying()) {
+                        sound5.stop();
+                    }
+                    introImage=img21;
+                    lazyscreen.image(introImage,0,0); 
+                    break;
+
+                case 22:
+                    introImage=img22;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 23:
+                    introImage=img23;
+                    lazyscreen.image(introImage,0,0); 
+                    break;
+
+                case 24:
+                    introImage=img24;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 25:
+                    introImage=img25;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 26:
+                    introImage=img26;
+                    lazyscreen.image(introImage,0,0);
+                    break;
+
+                case 27:
+                    introImage=img27;
+                    lazyscreen.image(introImage,0,0);
+                    lazyscreen.text("thank you for playing",50,50);
+                    break;
             }
+            // draw to screen
+            lazyscreen.textFont(font);
+            lazyscreen.textAlign(CENTER);
+            lazyscreen.fill(0);
+
+            if (gameStarted) {
+                lazyscreen.text(+ (minutes) + " min:" + (seconds) + " sec",480,490);
+            }
+
+            break;
+
         case 3:
              lazyscreen.image(img27,0,0);
     }
