@@ -341,7 +341,15 @@ void keyPressed() {
         }
         println("entering here" + myImageNumber);
     } else if (gameState == 2 && myImageNumber >= nrOfImages-1) {
-        // add line
+        gameState = 3;
+        background(255);
+        finalSeconds = seconds;
+        finalMinutes = minutes;
+        lazyscreen.textFont(font);
+        lazyscreen.textAlign(CENTER);
+        lazyscreen.fill(0);
+        lazyscreen.text("Time:" + (minutes) + " min:" + (seconds) + " sec",480,30);
+        lazyscreen.text("man count:" + keyman,10,30);
+        lazyscreen.text("woman count:" + keywoman,10,60);
     }
-
 }
